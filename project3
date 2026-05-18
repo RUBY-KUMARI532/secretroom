@@ -1,1 +1,33 @@
-# secretroom
+<html>
+    <body style="text-align:center; margin-top:100px; background-color:darkgray;">
+        
+        <h1>Escape the Room</h1>
+        <p id="message"></p>
+        
+        <input type="text" id="secretRoom">
+        
+        <button onclick="escapeRoom()">Submit</button><br><br>
+
+        <img id="showPhoto" src="treasure.jpg" width="150px" height="150px" style="display:none;">
+        <img id="showImage" src="monster.jpg" width="150px" height="150px" style="display:none;">
+        
+        <script>
+            function escapeRoom() {
+                let secret=document.getElementById("secretRoom").value;
+                if(secret=="open") {
+                    document.body.style.backgroundColor="green";
+                    document.getElementById("message").innerText="You Escaped!"
+                    document.getElementById("showPhoto").style.display="block";
+                    document.getElementById("showImage").style.display="none";
+                }
+                else{
+                    document.body.style.backgroundColor="darkred";
+                    document.getElementById("message").innerText="The Monster is here!"
+                    document.getElementById("showPhoto").style.display="none";
+                    document.getElementById("showImage").style.display="block";
+                }
+            }
+        </script>
+
+    </body>
+</html>
